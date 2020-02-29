@@ -105,3 +105,4 @@ class CircularLinkedList(object):
             p.link=p.link.link
             if self.last.info==x:
                 self.last=p
+                
