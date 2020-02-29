@@ -9,7 +9,7 @@ class SingleLinkedList:
         
     def display_list(self):
         if self.start is None:
-            print("List is empty.")
+            print("List is empty")
             return
         else:
             print("List is:")
@@ -26,6 +26,7 @@ class SingleLinkedList:
             n+=1
             p=p.link
         print("Number of nodes in the list:",n)
+        return n
         
     def search(self,x):
         position=1
@@ -128,7 +129,7 @@ class SingleLinkedList:
             
     def delete_node(self,x):
         if self.start is None:
-            print("List is empty.")
+            print("List is empty")
             
         if self.start.info==x:
             self.start=self.start.link
@@ -249,4 +250,33 @@ class SingleLinkedList:
         if px is not None:
             prev.link=px
         else:
-            print(x,'is not present in the list')   
+            print(x,'is not present in the list')
+            
+    def delete_at_index(self,delete_pos):
+        
+        if (self.start is None):
+            print("List is empty")
+            return
+        
+        if (delete_pos<1):
+            print("Index out of range")
+            return            
+        
+        if delete_pos==1:
+            self.start=self.start.link
+            return
+        
+        p=self.start
+        pos=1
+        while p.link is not None:
+            if pos==delete_pos-1:
+                break
+            p=p.link
+            pos+=1
+            
+        if p.link is None:
+            print("Index out of range")
+        else:
+            deleted_element=p.link.info
+            p.link=p.link.link
+            print('Element deleted at position {} is {}'.format(delete_pos,deleted_element))
