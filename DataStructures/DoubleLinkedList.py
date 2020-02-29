@@ -27,6 +27,7 @@ class DoubleLinkedList:
             n+=1
             p=p.next
         print("Number of nodes in the list:",n)
+        return n
         
     def search(self,x):
         position=1
@@ -79,7 +80,7 @@ class DoubleLinkedList:
             p=p.next
             
         if p is None:
-            print(x,"not present in the list")
+            print(x," not present in the list")
         else:
             temp.prev=p
             temp.next=p.next
@@ -182,3 +183,4 @@ class DoubleLinkedList:
             p2=p2.prev
         self.start=p1
         print("List is reversed")
+        
